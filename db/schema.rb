@@ -15,13 +15,13 @@ ActiveRecord::Schema.define(version: 2019_10_09_143645) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "task_types", force: :cascade do |t|
+  create_table "categories", force: :cascade do |t|
     t.bigint "task_id"
     t.bigint "type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["task_id"], name: "index_task_types_on_task_id"
-    t.index ["type_id"], name: "index_task_types_on_type_id"
+    t.index ["task_id"], name: "index_categories_on_task_id"
+    t.index ["type_id"], name: "index_categories_on_type_id"
   end
 
   create_table "tasks", force: :cascade do |t|
@@ -41,6 +41,6 @@ ActiveRecord::Schema.define(version: 2019_10_09_143645) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "task_types", "tasks"
-  add_foreign_key "task_types", "types"
+  add_foreign_key "categories", "tasks"
+  add_foreign_key "categories", "types"
 end

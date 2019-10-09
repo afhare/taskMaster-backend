@@ -1,5 +1,5 @@
 class Task < ApplicationRecord
-    has_many :task_types
-    has_many :types, through: :task_types
+    has_many :categories
+    has_many :types, through: :categories
     validates :title, :urgency, presence: true
 end
