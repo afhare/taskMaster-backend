@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2019_10_09_143645) do
     t.string "urgency"
     t.string "time_estimate"
     t.string "enthusiasm"
-    t.boolean "completed"
+    t.boolean "completed", default: false
     t.string "actual_time"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

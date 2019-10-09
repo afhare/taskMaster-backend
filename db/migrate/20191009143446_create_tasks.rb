@@ -5,7 +5,7 @@ class CreateTasks < ActiveRecord::Migration[5.2]
       t.string :urgency
       t.string :time_estimate
       t.string :enthusiasm
-      t.boolean :completed
+      t.boolean :completed, default: false
       t.string :actual_time
 
       t.timestamps
